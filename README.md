@@ -28,3 +28,20 @@ Una vez hecho esto tenemos que reiniciar el servicio de MySQL:
 ```
 sudo /etc/init.d/mysql restart
 ```
+# 1.4 Asignando privilegios a los usuarios de MySQL
+
+Ahora tenemos que asignar privilegios al usuario de MySQL que vamos a utilizar para conectarnos desde la máquina donde está corriendo el servicio de Apache HTTP.
+```
+mysql -u root -p  
+mysql> grant all privileges on DATABASE.* to USERNAME@IP-SERVIDOR-HTTP identified by 'PASSWORD';
+mysql> flush privileges;
+mysql> exit;
+```
+Si queremos permitir que un usuario se pueda conectar desde cualquier dirección IP podemos utilizar el comodín %. De modo que tendríamos que realizar lo siguiente:
+```
+mysql -u root -p  
+mysql> grant all privileges on DATABASE.* to USERNAME@'%' identified by 'PASSWORD';
+mysql> flush privileges;
+mysql> exit;
+```
+Tenga en cuenta que tendrá que reemplazar los valores DATABASE, USERNAME y IP-SERVIDOR-HTTP por los valores que necesite.
