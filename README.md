@@ -45,3 +45,14 @@ mysql> flush privileges;
 mysql> exit;
 ```
 Tenga en cuenta que tendrá que reemplazar los valores DATABASE, USERNAME y IP-SERVIDOR-HTTP por los valores que necesite.
+
+# 1.5 Comprobamos que podemos conectarnos a MySQL
+
+Ahora vamos a comprobar que podemos conectarnos con MySQL desde la máquina donde está corriendo el servicio de Apache HTTP. Podemos comprobarlo conectando con el shell de mysql:
+```
+mysql -u USERNAME -p -h IP-SERVIDOR-MYSQL
+```
+O haciendo un telnet al puerto donde está corriendo el servicio de MySQL:
+```
+telnet IP-SERVIDOR-MYSQL 3306
+```
