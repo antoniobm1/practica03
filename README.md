@@ -80,7 +80,7 @@ sudo mv adminer-4.3.1-mysql.php index.php
 
 ```
 ## Script mysql back-end
-
+```
 #!/bin/bash
 set -x
 
@@ -110,3 +110,4 @@ cd /home/ubuntu
 rm -rf iaw-practica-lamp
 git clone https://github.com/josejuansanchez/iaw-practica-lamp.git
 mysql -u root -p$DB_ROOT_PASSWD < /home/ubuntu/iaw-practica-lamp/db/database.sql
+´´´
